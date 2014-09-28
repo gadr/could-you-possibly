@@ -2,23 +2,41 @@ GruntVTEX = require 'grunt-vtex'
 
 module.exports = (grunt) ->
   pkg = grunt.file.readJSON 'package.json'
-  
+
+  lang = grunt.option('lang') or 'en-US'
+
   config = GruntVTEX.generateConfig grunt, pkg
 
   config.browserify =
     main:
-      src: ['src/script/could-you-possibly.coffee']
-      dest: 'build/<%= relativePath %>/script/could-you-possibly.js'
+      src: ['build/<%= relativePath %>/script/main.js']
+      dest: "build/<%= relativePath %>/script/#{pkg.name}.js"
       options:
-        transform: ['coffeeify', 'hbsfy']
+        transform: ['brfs']
 
-  delete config.watch.coffee
-  config.watch.main.files.push 'src/script/**/*.coffee'
-  config.watch.main.tasks.push 'browserify'
+  config.less =
+    main:
+      files: [
+        src: ['src/style/style.less']
+        dest: "build/<%= relativePath %>/style/#{pkg.name}.css"
+      ]
+
+  config['compile-handlebars'] =
+    index:
+      template: 'src/index.hbs'
+      templateData: {pkg: pkg}
+      output: 'build/<%= relativePath %>/index.html'
+    main:
+      template: 'src/templates/main.hbs'
+      templateData: "src/i18n/#{lang}.json"
+      output: 'build/<%= relativePath %>/templates/main.html'
+
+  config.watch.main.files.push 'src/**/*.hbs'
+  config.watch.main.tasks.push 'compile-handlebars', 'browserify'
 
   tasks =
     # Building block tasks
-    build: ['clean', 'copy:main', 'browserify', 'less']
+    build: ['clean', 'copy:main', 'compile-handlebars', 'coffee', 'browserify', 'less']
     min: ['useminPrepare', 'concat', 'uglify', 'usemin'] # minifies files
     # Deploy tasks
     dist: ['build', 'min', 'copy:deploy'] # Dist - minifies files

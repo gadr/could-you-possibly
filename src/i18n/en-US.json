@@ -1,3 +1,12 @@
 {
-  "hello": "Hello"
+    "thanksreading": "Thanks for reading!",
+    "didYouEnjoy": "Did you enjoy the article?",
+    "yes": "Yes",
+    "no": "No",
+    "great": "Great!" ,
+    "couldshare": "Could you possibly share it with a friend?",
+    "bummer": "Bummer.",
+    "couldcomment": "Could you possibly comment on how I could make it better?",
+    "thankShare": "Thanks for sharing!",
+    "thankComment": "Thanks for commenting!"
 }

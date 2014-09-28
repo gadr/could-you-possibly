@@ -1,0 +1,102 @@
+.could-you-possibly {
+  position: relative;
+  min-height: 200px;
+}
+
+.could-you-possibly .state {
+  min-height: 200px;
+  min-width: 650px;
+  @font-face {
+    font-family: 'icons';
+    src: url('../fonts/icons.eot');
+    src: url('../fonts/icons.eot?#iefix') format('embedded-opentype'), url('../fonts/icons.woff') format('woff'), url('../fonts/icons.ttf') format('truetype'), url('../fonts/icons.svg#icons') format('svg');
+    font-weight: normal;
+    font-style: normal;
+  }
+  .icon-twitter,
+  .icon-google-plus,
+  .icon-facebook {
+    font-family: 'icons';
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    text-decoration: none;
+    font-size: 1.5em;
+  }
+  .icon-twitter,
+  .icon-google-plus,
+  .icon-facebook {
+    padding-left: 0.5em;
+  }
+  .icon-twitter:before {
+    content: "\e002";
+    font-size: 1.1em;
+  }
+  .icon-google-plus:before {
+    content: "\e003";
+  }
+  .icon-facebook:before {
+    content: "\e004";
+  }
+  a, a:visited {
+    color: #46ba5f;
+    text-decoration: none;
+    transition: color ease 0.7s;
+    -webkit-transition: color ease 0.7s;
+  }
+  a:focus, a:hover {
+    color: #000100;
+    text-decoration: none;
+  }
+
+  position: absolute;
+  opacity:0;
+  visibility: hidden;
+
+  transition: opacity .1s linear, visibility 0s linear;
+
+  &.active {
+    opacity: 1;
+    visibility: visible;
+    transition: opacity .3s linear, visibility 0s linear;
+  }
+
+  button.yes, button.no {
+    background-color: #46ba5f;
+    color: white;
+    font-weight: bold;
+    font-size: 1.6em;
+    text-decoration: none;
+    width: 100px;
+    transition: background-color ease 0.7s;
+    -webkit-transition: background-color ease 0.7s;
+  }
+  button.yes:focus, button.yes:hover {
+    background-color: #00d49c;
+    text-decoration: none;
+  }
+  button.no:focus, button.no:hover {
+    background-color: #d4ce00;
+    text-decoration: none;
+  }
+
+  &.greeting .share-buttons {
+    margin-top: 20px;
+  }
+
+  &.yes {
+    .icon-twitter,
+    .icon-google-plus,
+    .icon-facebook {
+      font-size: 3em;
+    }
+
+    .share-buttons {
+      margin: 20px;
+    }
+  }
+}

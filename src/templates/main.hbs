@@ -1,1 +1,50 @@
-{{hello}} world!
+<div class="could-you-possibly">
+    <div class="state greeting">
+        <div class="pull-right share-buttons">
+            <a class="icon-twitter" data-next="thankShare" href="http://twitter.com/share?text={title}&amp;url={url}&amp;via={author}&amp;related={author}" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+                <span class="hidden">Twitter</span>
+            </a>
+            <a class="icon-facebook" data-next="thankShare" href="https://www.facebook.com/sharer/sharer.php?u={url}" onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
+                <span class="hidden">Facebook</span>
+            </a>
+            <a class="icon-google-plus" data-next="thankShare" href="https://plus.google.com/share?url={url}" onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
+                <span class="hidden">Google+</span>
+            </a>
+        </div>
+        <h3>{{thanksreading}}</h3>
+        <p>{{didYouEnjoy}}</p>
+        <div class="button-group">
+            <button class="yes btn" data-next="yes">{{yes}}</button>
+            <button class="no btn" data-next="no">{{no}}</button>
+        </div>
+    </div>
+    <div class="state yes">
+        <button class="btn btn-link pull-right" data-next="greeting">Back</button>
+        <h3>{{great}}</h3>
+        <p>{{couldshare}}</p>
+        <div class="share-buttons">
+            <a class="icon-twitter" data-next="thankShare" href="http://twitter.com/share?text={title}&amp;url={url}&amp;via={author}&amp;related={author}" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+                <span class="hidden">Twitter</span>
+            </a>
+            <a class="icon-facebook" data-next="thankShare" href="https://www.facebook.com/sharer/sharer.php?u={url}" onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
+                <span class="hidden">Facebook</span>
+            </a>
+            <a class="icon-google-plus" data-next="thankShare" href="https://plus.google.com/share?url={url}" onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
+                <span class="hidden">Google+</span>
+            </a>
+        </div>
+    </div>
+    <div class="state no">
+        <button class="btn btn-link pull-right" data-next="greeting">Back</button>
+        <h3>{{bummer}}</h3>
+        <p>{{couldcomment}}</p>
+    </div>
+    <div class="state thankShare">
+        <button class="btn btn-link pull-right" data-next="yes">Back</button>
+        <h2>{{thankShare}}</h2>
+    </div>
+    <div class="state thankComment">
+        <button class="btn btn-link pull-right" data-next="greeting">Back</button>
+        <h2>{{thankComment}}</h2>
+    </div>
+</div>

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Could you possibly?</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <meta name="description" content="{{pkg.description}}">
+    <meta name="author" content="{{pkg.author}}">
+    <meta name="version" content="{{pkg.version}}">
+    <link rel="stylesheet" href="//io.vtex.com.br/front-libs/bootstrap/3.0.3/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="//io.vtex.com.br/front-libs/font-awesome/4.0.1/css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="/{{pkg.name}}/style/{{pkg.name}}.css" media="screen"/>
+    <style>
+        #site-head, article, nav, article.preview, a.archive-link, .article-nav {
+            margin: 20px auto;
+            max-width: 650px;
+            width: 90%;
+        }
+        body * {
+            max-height: 1000000em;
+        }
+        article, aside, details, figcaption, figure, footer, header, hgroup, main, nav, section, summary {
+            display: block;
+        }
+
+        section.share {
+            margin-top: 1em;
+            border-top: 1px solid #ecf0f1;
+            padding-top: 1em;
+            text-align: right;
+        }
+        section.author, section.share {
+            width: 100%;
+            text-align: left;
+            text-transform: none;
+        }
+        section.author p.attr, section.share p.info {
+            font-size: 16px;
+            line-height: 20px;
+            text-transform: uppercase;
+            font-family: "Ubuntu", "Helvetica Neue", Helvetica, Arial, "Nimbus L", sans-serif;
+        }
+    </style>
+</head>
+<body>
+<div class="container-narrow">
+    <!-- Fork Snippet by http://codepo8.github.io/css-fork-on-github-ribbon/ -->
+    <style>#forkongithub a{background:#000;color:#fff;text-decoration:none;font-family:arial, sans-serif;text-align:center;font-weight:bold;padding:5px 40px;font-size:1rem;line-height:2rem;position:relative;transition:0.5s;}#forkongithub a:hover{background:#006;color:#fff;}#forkongithub a::before,#forkongithub a::after{content:"";width:100%;display:block;position:absolute;top:1px;left:0;height:1px;background:#fff;}#forkongithub a::after{bottom:1px;top:auto;}@media screen and (min-width:800px){#forkongithub{position:absolute;display:block;top:0;left:0;width:200px;overflow:hidden;height:200px;}#forkongithub a{width:200px;position:absolute;top:60px;left:-60px;transform:rotate(-45deg);-webkit-transform:rotate(-45deg);box-shadow:4px 4px 10px rgba(0,0,0,0.8);}}</style><span id="forkongithub"><a href="https://github.com/gadr/could-you-possibly">Fork me on GitHub</a></span>
+
+    <article class="post">
+
+        <header>
+            <h1>Could You Possibly? {{pkg.version}}</h1>
+            <div class="post-meta"><time datetime="2014-09-28">Sunday, September 28, 2014</time></div>
+        </header>
+
+        <section class="post-content">
+
+            <p>Hello! This is an example post.</p>
+            <h2>Discuss interesting things</h2>
+            <p>We are going to engage our users into either commenting or sharing!</p>
+
+        </section>
+
+        <section class="share">
+            <p class="info">Share this post</p>
+            <a class="icon-twitter" href="http://twitter.com/share?text=Chain your solutions with advanced Underscore&amp;url=http://blog.gadr.me/underscore-2/&amp;via=gadr90&amp;related=gadr90" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+                <span class="hidden">Twitter</span>
+            </a>
+            <a class="icon-facebook" href="https://www.facebook.com/sharer/sharer.php?u=http://blog.gadr.me/underscore-2/" onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
+                <span class="hidden">Facebook</span>
+            </a>
+            <a class="icon-google-plus" href="https://plus.google.com/share?url=http://blog.gadr.me/underscore-2/" onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
+                <span class="hidden">Google+</span>
+            </a>
+        </section>
+
+        <div id="disqus-thread">
+            <button class="btn">Comment</button>
+        </div>
+
+    </article>
+</div>
+<!-- TOPBAR -->
+<!--LIBS-->
+<script type="text/javascript" src="//io.vtex.com.br/front-libs/jquery/2.0.3/jquery-2.0.3.min.js"></script>
+<script type="text/javascript" src="//io.vtex.com.br/front-libs/underscore/1.5.2/underscore-min.js"></script>
+<!--/LIBS-->
+<!-- build:js /{{pkg.name}}/script/{{pkg.name}}.min.js -->
+<script type="text/javascript" src="/{{pkg.name}}/script/{{pkg.name}}.js"></script>
+<!-- endbuild -->
+<script>
+    (function(){
+        $(function(){
+            var options = {
+                selector: 'section.share',
+                url: 'http://blog.gadr.me/underscore-2/',
+                title: 'My Blog Post Title',
+                author: 'gadr90'
+            };
+            new CouldYouPossibly(options);
+        });
+    })();
+</script>
+</body>
+</html>

@@ -9,10 +9,12 @@
   ],
   "deploy": "dist/",
   "devDependencies": {
+    "brfs": "^1.2.0",
     "coffeeify": "^0.7.0",
     "grunt": "~0.4.5",
     "grunt-angular-templates": "~0.4.1",
     "grunt-browserify": "^3.0.1",
+    "grunt-compile-handlebars": "^0.7.8",
     "grunt-contrib-clean": "~0.5.0",
     "grunt-contrib-coffee": "~0.8.0",
     "grunt-contrib-concat": "~0.4.0",
@@ -25,8 +27,7 @@
     "grunt-shell": "^0.7.0",
     "grunt-usemin": "~2.0.2",
     "grunt-vtex": "^0.8.0",
-    "handlebars": "^1.3.0",
-    "hbsfy": "^2.2.0"
+    "stringify": "^2.2.0"
   },
   "repository": {
     "type": "git",
@@ -38,8 +39,6 @@
     "button",
     "polite"
   ],
-  "contributors": [
-    "Guilherme Rodrigues <gadr90@gmail.com>"
-  ],
+  "author": "Guilherme Rodrigues <gadr90@gmail.com>",
   "license": "MIT"
 }
