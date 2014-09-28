@@ -25,7 +25,6 @@ class CouldYouPossibly
       author: options.author ? ''
     }
     @shareSelector = options.selector ? 'section.share'
-    @commentSelector = options.commentSelector ? '#disqus-thread'
     @$node = $(@shareSelector)
     template = template
       .replace(/\{url\}/g, @data.url)
@@ -33,9 +32,7 @@ class CouldYouPossibly
       .replace(/\{author\}/g, @data.author)
     @$node.html(template)
     @$node.on('click', @clickHandler)
-    $(@commentSelector)
-      .on('click', @commentHandler)
-      .on('keyup', @commentHandler)
+    $(window).on('new-comment', @commentHandler)
 
     @updateView()
 
