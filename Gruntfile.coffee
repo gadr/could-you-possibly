@@ -36,6 +36,7 @@ module.exports = (grunt) ->
 
   config.watch.main.files.push 'src/**/*.hbs'
   config.watch.main.tasks.push 'compile-handlebars', 'browserify'
+  config.watch.coffee.tasks.push 'browserify'
 
   tasks =
     # Building block tasks
