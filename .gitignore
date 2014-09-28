@@ -10,4 +10,3 @@ deploy/
 .idea/
 bower_components/
 .tmp/
-dist/
