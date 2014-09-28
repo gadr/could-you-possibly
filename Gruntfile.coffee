@@ -7,6 +7,9 @@ module.exports = (grunt) ->
 
   config = GruntVTEX.generateConfig grunt, pkg
 
+  config.clean.main.push 'dist/'
+  config.clean.deploy = ["dist/#{pkg.version}/{i18n/,templates/,script/main.js,index.*,style/includes/}"]
+
   config.browserify =
     main:
       src: ['build/<%= relativePath %>/script/main.js']
@@ -36,12 +39,10 @@ module.exports = (grunt) ->
 
   tasks =
     # Building block tasks
-    build: ['clean', 'copy:main', 'compile-handlebars', 'coffee', 'browserify', 'less']
-    min: ['useminPrepare', 'concat', 'uglify', 'usemin'] # minifies files
+    build: ['clean:main', 'copy:main', 'compile-handlebars', 'coffee', 'browserify', 'less']
+    min: ['useminPrepare', 'uglify', 'usemin'] # minifies files
     # Deploy tasks
-    dist: ['build', 'min', 'copy:deploy'] # Dist - minifies files
-    test: []
-    vtex_deploy: ['shell:cp']
+    dist: ['build', 'min', 'copy:deploy', 'clean:deploy'] # Dist - minifies files
     # Development tasks
     default: ['build', 'connect', 'watch']
     devmin: ['build', 'min', 'connect:http:keepalive'] # Minifies files and serve
