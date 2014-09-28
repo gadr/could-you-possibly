@@ -1,0 +1,45 @@
+{
+  "name": "could-you-possibly",
+  "version": "0.0.0",
+  "readmeFilename": "README.md",
+  "description": "Polite sharing buttons for your blog.",
+  "main": "index.html",
+  "paths": [
+    "/could-you-possibly"
+  ],
+  "deploy": "dist/",
+  "devDependencies": {
+    "coffeeify": "^0.7.0",
+    "grunt": "~0.4.5",
+    "grunt-angular-templates": "~0.4.1",
+    "grunt-browserify": "^3.0.1",
+    "grunt-contrib-clean": "~0.5.0",
+    "grunt-contrib-coffee": "~0.8.0",
+    "grunt-contrib-concat": "~0.4.0",
+    "grunt-contrib-connect": "~0.7.1",
+    "grunt-contrib-copy": "~0.5.0",
+    "grunt-contrib-cssmin": "~0.7.0",
+    "grunt-contrib-less": "~0.8.3",
+    "grunt-contrib-uglify": "~0.2.2",
+    "grunt-contrib-watch": "~0.5.1",
+    "grunt-shell": "^0.7.0",
+    "grunt-usemin": "~2.0.2",
+    "grunt-vtex": "^0.8.0",
+    "handlebars": "^1.3.0",
+    "hbsfy": "^2.2.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/gadr/could-you-possibly.git"
+  },
+  "keywords": [
+    "blog",
+    "share",
+    "button",
+    "polite"
+  ],
+  "contributors": [
+    "Guilherme Rodrigues <gadr90@gmail.com>"
+  ],
+  "license": "MIT"
+}
