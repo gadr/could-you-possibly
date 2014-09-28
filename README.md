@@ -1,3 +1,3 @@
 # Could you possibly?
 
-Ask your users to your article, politely.
+Ask your users to share your article, politely.
