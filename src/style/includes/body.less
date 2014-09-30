@@ -1,6 +1,7 @@
 .could-you-possibly {
   position: relative;
   min-height: 175px;
+  width: 100%;
 
   .btn {
     display: inline-block;
@@ -39,8 +40,21 @@
 }
 
 .could-you-possibly .state {
-  min-height: 200px;
-  min-width: 650px;
+  min-height: 175px;
+  width: 100%;
+
+  position: absolute;
+  opacity:0;
+  visibility: hidden;
+
+  transition: opacity .1s linear, visibility 0s linear;
+
+  &.active {
+    opacity: 1;
+    visibility: visible;
+    transition: opacity .3s linear, visibility 0s linear;
+  }
+
   @font-face {
     font-family: 'icons';
     src: url('../fonts/icons.eot');
@@ -86,18 +100,6 @@
   a:focus, a:hover {
     color: #000100;
     text-decoration: none;
-  }
-
-  position: absolute;
-  opacity:0;
-  visibility: hidden;
-
-  transition: opacity .1s linear, visibility 0s linear;
-
-  &.active {
-    opacity: 1;
-    visibility: visible;
-    transition: opacity .3s linear, visibility 0s linear;
   }
 
   button.yes, button.no {
